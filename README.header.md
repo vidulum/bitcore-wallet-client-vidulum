@@ -4,11 +4,11 @@
 [![Build Status](https://img.shields.io/travis/bitpay/bitcore-wallet-client.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore-wallet-client)
 [![Coverage Status](https://coveralls.io/repos/bitpay/bitcore-wallet-client/badge.svg)](https://coveralls.io/r/bitpay/bitcore-wallet-client)
 
-The *official* client library for [bitcore-wallet-service-btcz] (https://github.com/bitcoinz-wallets/bitcore-wallet-service-btcz).
+The *official* client library for [bitcore-wallet-service-xsg] (https://github.com/snowgem/bitcore-wallet-service-xsg).
 
 ## Description
 
-This package communicates with BWS [Bitcore wallet service BTCZ](https://github.com/bitcoinz-wallets/bitcore-wallet-service-btcz) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
+This package communicates with BWS [Bitcore wallet service XSG](https://github.com/snowgem/bitcore-wallet-service-xsg) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
 
 See [Bitcore-wallet] (https://github.com/bitpay/bitcore-wallet) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client.
 
@@ -16,19 +16,19 @@ See [Bitcore-wallet] (https://github.com/bitpay/bitcore-wallet) for a simple CLI
 
 You can start using bitcore-wallet-client with the command below:
 
-* via [NPM]: by running `npm install https://github.com/bitcoinz-wallets/bitcore-wallet-service-btcz.git`
+* via [NPM]: by running `npm install https://github.com/snowgem/bitcore-wallet-service-xsg.git`
 from your console.
 
 ## Example
 
-Start your own local [Bitcore wallet service BTCZ](https://github.com/bitcoinz-wallets/bitcore-wallet-service-btcz) instance. In this example we assume you have `bitcore-wallet-service-btcz` running on your `localhost:3232`.
+Start your own local [Bitcore wallet service XSG](https://github.com/snowgem/bitcore-wallet-service-xsg) instance. In this example we assume you have `bitcore-wallet-service-xsg` running on your `localhost:3232`.
 
 Then create two files `irene.js` and `tomas.js` with the content below:
 
 **irene.js**
 
 ``` javascript
-var Client = require('bitcore-wallet-client-btcz');
+var Client = require('bitcore-wallet-client-xsg');
 
 
 var fs = require('fs');
@@ -54,7 +54,7 @@ client.createWallet("My Wallet", "Irene", 2, 2, {network: 'testnet'}, function(e
 
 ``` javascript
 
-var Client = require('bitcore-wallet-client-btcz');
+var Client = require('bitcore-wallet-client-xsg');
 
 
 var fs = require('fs');
@@ -104,10 +104,10 @@ client.joinWallet(secret, "Tomas", {}, function(err, wallet) {
 });
 ```
 
-Install `bitcore-wallet-client-btcz` before start:
+Install `bitcore-wallet-client-xsg` before start:
 
 ```
-npm install https://github.com/bitcoinz-wallets/bitcore-wallet-service-btcz.git
+npm install https://github.com/snowgem/bitcore-wallet-service-xsg.git
 ```
 
 Create a new wallet with the first script:

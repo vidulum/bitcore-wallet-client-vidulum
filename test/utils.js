@@ -4,7 +4,7 @@ var _ = require('lodash');
 var chai = require('chai');
 var sinon = require('sinon');
 var should = chai.should();
-var Bitcore = require('bitcore-lib-btcz');
+var Bitcore = require('bitcore-lib-xsg');
 
 var Utils = require('../lib/common/utils');
 
@@ -58,19 +58,19 @@ describe('Utils', function() {
         args: [1, 'bit'],
         expected: '0',
       }, {
-        args: [1, 'btcz'],
+        args: [1, 'xsg'],
         expected: '0.00',
       }, {
-        args: [400050000, 'btcz'],
+        args: [400050000, 'xsg'],
         expected: '4.0005',
       }, {
-        args: [400000000, 'btcz'],
+        args: [400000000, 'xsg'],
         expected: '4.00',
       }, {
-        args: [49999, 'btcz'],
+        args: [49999, 'xsg'],
         expected: '0.000499',
       }, {
-        args: [100000000, 'btcz'],
+        args: [100000000, 'xsg'],
         expected: '1.00',
       }, {
         args: [0, 'bit'],
@@ -79,19 +79,19 @@ describe('Utils', function() {
         args: [12345678, 'bit'],
         expected: '123,456',
       }, {
-        args: [12345678, 'btcz'],
+        args: [12345678, 'xsg'],
         expected: '0.123456',
       }, {
-        args: [12345611, 'btcz'],
+        args: [12345611, 'xsg'],
         expected: '0.123456',
       }, {
-        args: [1234, 'btcz'],
+        args: [1234, 'xsg'],
         expected: '0.000012',
       }, {
-        args: [1299, 'btcz'],
+        args: [1299, 'xsg'],
         expected: '0.000012',
       }, {
-        args: [1234567899999, 'btcz'],
+        args: [1234567899999, 'xsg'],
         expected: '12,345.678999',
       }, {
         args: [12345678, 'bit', {
@@ -99,12 +99,12 @@ describe('Utils', function() {
         }],
         expected: '123.456',
       }, {
-        args: [12345678, 'btcz', {
+        args: [12345678, 'xsg', {
           decimalSeparator: ','
         }],
         expected: '0,123456',
       }, {
-        args: [1234567899999, 'btcz', {
+        args: [1234567899999, 'xsg', {
           thousandsSeparator: ' ',
           decimalSeparator: ','
         }],
@@ -120,7 +120,7 @@ describe('Utils', function() {
         args: [1, 'bit'],
         expected: '0.01',
       }, {
-        args: [1, 'btcz'],
+        args: [1, 'xsg'],
         expected: '0.00000001',
       }, {
         args: [0, 'bit'],
@@ -129,22 +129,22 @@ describe('Utils', function() {
         args: [12345678, 'bit'],
         expected: '123,456.78',
       }, {
-        args: [12345678, 'btcz'],
+        args: [12345678, 'xsg'],
         expected: '0.12345678',
       }, {
-        args: [1234567, 'btcz'],
+        args: [1234567, 'xsg'],
         expected: '0.01234567',
       }, {
-        args: [12345611, 'btcz'],
+        args: [12345611, 'xsg'],
         expected: '0.12345611',
       }, {
-        args: [1234, 'btcz'],
+        args: [1234, 'xsg'],
         expected: '0.00001234',
       }, {
-        args: [1299, 'btcz'],
+        args: [1299, 'xsg'],
         expected: '0.00001299',
       }, {
-        args: [1234567899999, 'btcz'],
+        args: [1234567899999, 'xsg'],
         expected: '12,345.67899999',
       }, {
         args: [12345678, 'bit', {
@@ -152,12 +152,12 @@ describe('Utils', function() {
         }],
         expected: "123'456.78",
       }, {
-        args: [12345678, 'btcz', {
+        args: [12345678, 'xsg', {
           decimalSeparator: ','
         }],
         expected: '0,12345678',
       }, {
-        args: [1234567899999, 'btcz', {
+        args: [1234567899999, 'xsg', {
           thousandsSeparator: ' ',
           decimalSeparator: ','
         }],
