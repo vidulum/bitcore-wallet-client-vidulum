@@ -15,7 +15,7 @@ var tingodb = require('tingodb')({
 
 var log = require('../lib/log');
 
-var Bitcore = require('bitcore-lib-xsg');
+var Bitcore = require('bitcore-lib-snowgem');
 var Bitcore_ = {
   xsg: Bitcore,
 };
@@ -23,7 +23,7 @@ var Bitcore_ = {
 
 var BitcorePayPro = require('bitcore-payment-protocol');
 
-var BWS = require('bitcore-wallet-service-xsg');
+var BWS = require('bitcore-wallet-service');
 
 var Common = require('../lib/common');
 var Constants = Common.Constants;
