@@ -15,9 +15,9 @@ var tingodb = require('tingodb')({
 
 var log = require('../lib/log');
 
-var Bitcore = require('bitcore-lib-snowgem');
+var Bitcore = require('bitcore-lib-vidulum');
 var Bitcore_ = {
-  xsg: Bitcore,
+  vdl: Bitcore,
 };
 
 
@@ -37,11 +37,11 @@ var Errors = require('../lib/errors');
 
 var helpers = {};
 
-helpers.toSatoshi = function(xsg) {
-  if (_.isArray(xsg)) {
-    return _.map(xsg, helpers.toSatoshi);
+helpers.toSatoshi = function(vdl) {
+  if (_.isArray(vdl)) {
+    return _.map(vdl, helpers.toSatoshi);
   } else {
-    return parseFloat((xsg * 1e8).toPrecision(12));
+    return parseFloat((vdl * 1e8).toPrecision(12));
   }
 };
 
@@ -117,7 +117,7 @@ helpers.createAndJoinWallet = function(clients, m, n, opts, cb) {
 
   opts = opts || {};
 
-  var coin = opts.coin || 'xsg';
+  var coin = opts.coin || 'vdl';
   var network = opts.network || 'testnet';
 
   clients[0].seedFromRandomWithMnemonic({
@@ -923,7 +923,7 @@ describe('client API', function() {
         var signatures = Client.signTxp(txp, derivedPrivateKey['BIP44']);
         signatures.length.should.be.equal(utxos.length);
       });
-      it('should sign xsg proposal correctly', function() {
+      it('should sign vdl proposal correctly', function() {
         var toAddress = 'msj42CCGruhRsFrGATiUuh25dtxYtnpbTx';
         var changeAddress = 'msj42CCGruhRsFrGATiUuh25dtxYtnpbTx';
 
@@ -968,7 +968,7 @@ describe('client API', function() {
         var walletId = Uuid.v4();
         var walletPrivKey = new Bitcore.PrivateKey();
         var network = i % 2 == 0 ? 'testnet' : 'livenet';
-        var coin = i % 3 == 0 ? 'xsg';
+        var coin = i % 3 == 0 ? 'vdl';
         var secret = Client._buildSecret(walletId, walletPrivKey, coin, network);
         var result = Client.parseSecret(secret);
         result.walletId.should.equal(walletId);
@@ -986,7 +986,7 @@ describe('client API', function() {
     it('should create secret and parse secret from string', function() {
       var walletId = Uuid.v4();
       var walletPrivKey = new Bitcore.PrivateKey();
-      var coin = 'xsg';
+      var coin = 'vdl';
       var network = 'testnet';
       var secret = Client._buildSecret(walletId, walletPrivKey.toString(), coin, network);
       var result = Client.parseSecret(secret);
@@ -995,9 +995,9 @@ describe('client API', function() {
       result.coin.should.equal(coin);
       result.network.should.equal(network);
     });
-    it('should default to xsg for secrets not specifying coin', function() {
+    it('should default to vdl for secrets not specifying coin', function() {
       var result = Client.parseSecret('5ZN64RxKWCJXcy1pZwgrAzL1NnN5FQic5M2tLJVG5bEHaGXNRQs2uzJjMa9pMAbP5rz9Vu2xSaT');
-      result.coin.should.equal('xsg');
+      result.coin.should.equal('vdl');
     });
   });
 
@@ -1574,14 +1574,14 @@ describe('client API', function() {
   });
 
   describe('Network fees', function() {
-    it('should get current fee levels for XSG', function(done) {
+    it('should get current fee levels for VDL', function(done) {
       blockchainExplorerMock.setFeeLevels({
         1: 40000,
         3: 20000,
         10: 18000,
       });
       clients[0].credentials = {};
-      clients[0].getFeeLevels('xsg', 'livenet', function(err, levels) {
+      clients[0].getFeeLevels('vdl', 'livenet', function(err, levels) {
         should.not.exist(err);
         should.exist(levels);
         _.difference(['priority', 'normal', 'economy'], _.map(levels, 'level')).should.be.empty;
@@ -2484,9 +2484,9 @@ describe('client API', function() {
       });
     };
 
-    describe('XSG', function(done) {
+    describe('VDL', function(done) {
       beforeEach(function(done) {
-        setup(2, 3, 'xsg', 'testnet', done);
+        setup(2, 3, 'vdl', 'testnet', done);
       });
 
       it('Should sign proposal', function(done) {
@@ -5038,9 +5038,9 @@ describe('client API', function() {
   });
 
   var addrMap = {
-    xsg: ['1PuKMvRFfwbLXyEPXZzkGi111gMUCs6uE3','1GG3JQikGC7wxstyavUBDoCJ66bWLLENZC']
+    vdl: ['1PuKMvRFfwbLXyEPXZzkGi111gMUCs6uE3','1GG3JQikGC7wxstyavUBDoCJ66bWLLENZC']
   };
-  _.each(['xsg'], function(coin) {
+  _.each(['vdl'], function(coin) {
     var addr= addrMap[coin];
 
     describe('Sweep paper wallet ' + coin, function() {
@@ -5157,15 +5157,15 @@ describe('client API', function() {
         }],
         expected: '0.01',
       }, {
-        args: [1, 'xsg'],
+        args: [1, 'vdl'],
         expected: '0.00',
       }, {
-        args: [1, 'xsg', {
+        args: [1, 'vdl', {
           fullPrecision: true
         }],
         expected: '0.00000001',
       }, {
-        args: [1234567899999, 'xsg', {
+        args: [1234567899999, 'vdl', {
           thousandsSeparator: ' ',
           decimalSeparator: ','
         }],

@@ -1,8 +1,8 @@
-# bitcore-wallet-client-snowgem
+# bitcore-wallet-client-vidulum
 
-[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-client-snowgem.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-client-snowgem)
-[![Build Status](https://img.shields.io/travis/bitpay/bitcore-wallet-client-snowgem.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore-wallet-client-snowgem)
-[![Coverage Status](https://coveralls.io/repos/bitpay/bitcore-wallet-client-snowgem/badge.svg)](https://coveralls.io/r/bitpay/bitcore-wallet-client-snowgem)
+[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-client-vidulum.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-client-vidulum)
+[![Build Status](https://img.shields.io/travis/bitpay/bitcore-wallet-client-vidulum.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore-wallet-client-vidulum)
+[![Coverage Status](https://coveralls.io/repos/bitpay/bitcore-wallet-client-vidulum/badge.svg)](https://coveralls.io/r/bitpay/bitcore-wallet-client-vidulum)
 
 The *official* client library for [bitcore-wallet-service] (https://github.com/bitpay/bitcore-wallet-service).
 
@@ -10,14 +10,14 @@ The *official* client library for [bitcore-wallet-service] (https://github.com/b
 
 This package communicates with BWS [Bitcore wallet service](https://github.com/bitpay/bitcore-wallet-service) using the REST API. All REST endpoints are wrapped as simple async methods. All relevant responses from BWS are checked independently by the peers, thus the importance of using this library when talking to a third party BWS instance.
 
-See [Bitcore-wallet] (https://github.com/bitpay/bitcore-wallet) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client-snowgem.
+See [Bitcore-wallet] (https://github.com/bitpay/bitcore-wallet) for a simple CLI wallet implementation that relays on BWS and uses bitcore-wallet-client-vidulum.
 
 ## Get Started
 
-You can start using bitcore-wallet-client-snowgem in any of these two ways:
+You can start using bitcore-wallet-client-vidulum in any of these two ways:
 
-* via [Bower](http://bower.io/): by running `bower install bitcore-wallet-client-snowgem` from your console
-* or via [NPM](https://www.npmjs.com/package/bitcore-wallet-client-snowgem): by running `npm install bitcore-wallet-client-snowgem` from your console.
+* via [Bower](http://bower.io/): by running `bower install bitcore-wallet-client-vidulum` from your console
+* or via [NPM](https://www.npmjs.com/package/bitcore-wallet-client-vidulum): by running `npm install bitcore-wallet-client-vidulum` from your console.
 
 ## Example
 
@@ -28,7 +28,7 @@ Then create two files `irene.js` and `tomas.js` with the content below:
 **irene.js**
 
 ``` javascript
-var Client = require('bitcore-wallet-client-snowgem');
+var Client = require('bitcore-wallet-client-vidulum');
 
 
 var fs = require('fs');
@@ -54,7 +54,7 @@ client.createWallet("My Wallet", "Irene", 2, 2, {network: 'testnet'}, function(e
 
 ``` javascript
 
-var Client = require('bitcore-wallet-client-snowgem');
+var Client = require('bitcore-wallet-client-vidulum');
 
 
 var fs = require('fs');
@@ -104,10 +104,10 @@ client.joinWallet(secret, "Tomas", {}, function(err, wallet) {
 });
 ```
 
-Install `bitcore-wallet-client-snowgem` before start:
+Install `bitcore-wallet-client-vidulum` before start:
 
 ```
-npm i bitcore-wallet-client-snowgem
+npm i bitcore-wallet-client-vidulum
 ```
 
 Create a new wallet with the first script:
@@ -1118,4 +1118,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-# bitcore-wallet-client-snowgem
+# bitcore-wallet-client-vidulum

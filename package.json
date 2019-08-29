@@ -1,7 +1,7 @@
 {
-  "name": "bitcore-wallet-client-snowgem",
+  "name": "bitcore-wallet-client-vidulum",
   "description": "Client for bitcore-wallet-service",
-  "author": "SnowGem Community",
+  "author": "Vidulum",
   "version": "1.0.3",
   "license": "MIT",
   "keywords": [
@@ -17,18 +17,18 @@
   "engine": "node >= 8.0.0",
   "main": "index.js",
   "repository": {
-    "url": "git@github.com:snowgem/bitcore-wallet-client-snowgem.git",
+    "url": "git@github.com:vidulum/bitcore-wallet-client-vidulum.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/snowgem/bitcore-wallet-client-snowgem/issues"
+    "url": "https://github.com/vidulum/bitcore-wallet-client-vidulum/issues"
   },
   "dependencies": {
     "async": "^0.9.0",
     "bip38": "^1.3.0",
     "bitcore-mnemonic": "^1.2.2",
     "bitcore-payment-protocol": "^1.2.2",
-    "bitcore-lib-snowgem": "git+https://github.com/snowgem/bitcore-lib-snowgem.git",
+    "bitcore-lib-vidulum": "git+https://github.com/vidulum/bitcore-lib-vidulum.git",
     "json-stable-stringify": "^1.0.0",
     "lodash": "^4.17.4",
     "preconditions": "^1.0.8",
@@ -36,7 +36,7 @@
     "superagent": "^3.4.1"
   },
   "devDependencies": {
-    "bitcore-wallet-service": "git+https://github.com/snowgem/bitcore-wallet-service-snowgem.git",
+    "bitcore-wallet-service": "git+https://github.com/vidulum/bitcore-wallet-service-vidulum.git",
     "browserify": "^13.1.0",
     "chai": "^1.9.1",
     "coveralls": "^2.11.2",
